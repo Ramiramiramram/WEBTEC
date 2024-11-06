@@ -1,35 +1,25 @@
 $(document).ready(function(){
 
-    fetch("books.json")
-        .then((rawData) => rawData.json())
-        .then(pokedex =>{
-            // console.log(pokedex)
+    fetch('../json/data.json')
+        .then(res => res.json())
+        .then(data => {
 
             let linkID = 0;
-
-            books.forEach(book => {
-                // console.log(pokemon);
+    
+            data.forEach(book => {
+                    
+                let title = book["title"];
+                let image = book["image"];
                 
-                let id = book["id"];
-                let title = book["bookTitle"];
-                let ISBN = book["ISBN"];
-                let genre = book["genre"];
-                let publisher = book["publisher"];
-                let publicationDate = book["publicationDate"];
-                let author = book["author"];
-
-                    $('.pokemon-container').append( 
-                        `<div class="card">
-                            <ul type="none">
-                            <li class="pokemon-id">#${id}</li>
-                            <li class="pokemon-name">
-                                <a href="pokemon.html?id=${linkID++}">${name}</a>
-                            </li>
-                            </li>
-                            </ul>
-                        </div>`
-                    );
-            });
-
+                       $('.books-container').append( 
+                           `<div class="book" onclick="window.location.href='/Book/bookDetails.html?id=${linkID++}'">
+                               <a href="/Book/bookDetails.html?id=${linkID}"><img src="${image}" alt="${title}"></a>
+                               <ul type="none">
+                                   <li class="book-title">${title}</li>
+                               </ul>
+                           </div>`
+                       );
+           });
+            
         });
 })
