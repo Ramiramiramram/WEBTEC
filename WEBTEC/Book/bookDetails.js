@@ -15,6 +15,7 @@ $(() => {
             let publicationDate = book["publicationDate"];
             let image = book["image"];
             let author = book["author"];
+            let desc = book["synopsis"];
 
             $(".book-page-title").html(title);
             $(".book-page-image").html(`<img src="${image}" alt=${title}"/>`);

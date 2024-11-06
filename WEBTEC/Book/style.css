@@ -1,6 +1,7 @@
 /* Book Page */
 .book-page {
     width: 800px;
+    height: 400px;
     margin: 50px auto;
     background-color: aliceblue;
     padding: 25px;

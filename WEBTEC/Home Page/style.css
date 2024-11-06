@@ -18,8 +18,8 @@ body h1{
 .book{
     background-color: gray;
     border-width: 10px;
-    width: 150px;
-    height: 220px;  
+    width: 200px;
+    height: 240px;  
     border-radius: 10px;
 }
 .book img{
